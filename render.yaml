@@ -2,19 +2,13 @@ services:
   - type: web
     name: luminatech-web
     runtime: node
-    plan: starter
+    plan: free
     buildCommand: npm ci
     startCommand: npm run start:server
-    disk:
-      name: luminatech-data
-      mountPath: /var/data
-      sizeGB: 1
     envVars:
       - key: NODE_ENV
         value: production
       - key: PUBLIC_SHARE
         value: "1"
-      - key: DATABASE_PATH
-        value: /var/data/luminatech.sqlite
       - key: ADMIN_PASSWORD
         generateValue: true
