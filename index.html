@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuminaTech | Soluciones Digitales Avanzadas</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fuentes premium de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="brand" onclick="navigateTo('inicio')">Lumina<span>Tech</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#" onclick="navigateTo('inicio')">Inicio</a></li>
+                    <li><a href="#" onclick="navigateTo('quienes-somos')">La Empresa</a></li>
+                    
+                    <!-- Menú Desplegable -->
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn" onclick="navigateTo('servicios')">Servicios <span class="arrow">▼</span></a>
+                        <div class="dropdown-content">
+                            <a href="#" onclick="navigateTo('servicios')">Desarrollo Web a Medida</a>
+                            <a href="#" onclick="navigateTo('servicios')">Inteligencia Artificial</a>
+                            <a href="#" onclick="navigateTo('servicios')">Posicionamiento SEO</a>
+                        </div>
+                    </li>
+                    
+                    <li><a href="#" onclick="navigateTo('productos')">Productos</a></li>
+                    <li><button class="cart-button" onclick="openCart()" aria-label="Abrir carrito">🛒 <span>Carrito</span> <b id="cart-count">0</b></button></li>
+                    <li><a href="#" class="btn-nav" onclick="openModal('contacto', 'general')">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENEDOR DE VISTAS (SPA) -->
+    <main id="main-content">
+        
+        <!-- =================== INICIO =================== -->
+        <section id="inicio" class="view active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Transformación Digital para el <span class="highlight">Futuro</span></h1>
+                    <p>Diseñamos, desarrollamos y escalamos soluciones tecnológicas de alto rendimiento para empresas que buscan liderar su sector.</p>
+                    <div class="hero-buttons">
+                        <button class="btn-primary" onclick="navigateTo('servicios')">Ver servicios y precios</button>
+                        <button class="btn-secondary" onclick="navigateTo('quienes-somos')">Nuestra Filosofía</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="metrics-banner">
+                <div class="metric"><h3>+150</h3><p>Proyectos Entregados</p></div>
+                <div class="metric"><h3>98%</h3><p>Satisfacción</p></div>
+                <div class="metric"><h3>24/7</h3><p>Soporte Técnico</p></div>
+            </div>
+        </section>
+
+        <!-- =================== SERVICIOS =================== -->
+        <section id="servicios" class="view">
+            <div class="container page-padding">
+                <div class="catalog-heading">
+                    <div>
+                        <span class="eyebrow">SERVICIOS PROFESIONALES</span>
+                        <h2 class="section-title section-title-left">Soluciones listas para impulsar tu negocio</h2>
+                    </div>
+                    <p class="catalog-note">Elige un servicio y registra un pedido de demostración.</p>
+                </div>
+                <div class="cards-grid">
+                    <div class="card service-card"><div class="card-icon">💻</div><span class="service-tag">Más elegido</span><h3>Desarrollo Web a Medida</h3><p>Una web rápida, responsive y preparada para convertir visitas en clientes.</p><div class="product-bottom"><strong>899,00 € <small>pago único</small></strong><button class="btn-primary" onclick="addToCart('web')">Comprar ahora</button></div></div>
+                    <div class="card service-card"><div class="card-icon">🤖</div><h3>Automatización con IA</h3><p>Automatiza tareas repetitivas y mejora la atención con inteligencia artificial.</p><div class="product-bottom"><strong>599,00 € <small>pago único</small></strong><button class="btn-primary" onclick="addToCart('ia')">Comprar ahora</button></div></div>
+                    <div class="card service-card"><div class="card-icon">🚀</div><h3>Posicionamiento SEO</h3><p>Optimización técnica y de contenidos para que tus clientes te encuentren.</p><div class="product-bottom"><strong>249,00 € <small>/ mes</small></strong><button class="btn-primary" onclick="addToCart('seo')">Comprar ahora</button></div></div>
+                    <div class="card service-card"><div class="card-icon">🎨</div><h3>Diseño UX/UI</h3><p>Interfaces claras y atractivas que hacen que cada interacción sea sencilla.</p><div class="product-bottom"><strong>449,00 € <small>pago único</small></strong><button class="btn-primary" onclick="addToCart('design')">Comprar ahora</button></div></div>
+                    <div class="card service-card"><div class="card-icon">☁️</div><h3>Migración a la nube</h3><p>Lleva tus sistemas a la nube con un plan seguro, ordenado y sin interrupciones.</p><div class="product-bottom"><strong>699,00 € <small>pago único</small></strong><button class="btn-primary" onclick="addToCart('cloud')">Comprar ahora</button></div></div>
+                    <div class="card service-card"><div class="card-icon">🛠️</div><h3>Soporte Premium</h3><p>Asistencia técnica prioritaria para mantener tu negocio siempre operativo.</p><div class="product-bottom"><strong>99,00 € <small>/ mes</small></strong><button class="btn-primary" onclick="addToCart('support')">Comprar ahora</button></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================== QUIÉNES SOMOS =================== -->
+        <section id="quienes-somos" class="view">
+            <div class="container page-padding">
+                <h2 class="section-title">Sobre LuminaTech</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h3>Nuestra Historia y Misión</h3>
+                        <p>Fundada por pioneros en el sector tecnológico, LuminaTech nació con el propósito de democratizar el acceso a la tecnología empresarial de alto nivel. Creemos que cada empresa tiene un potencial oculto que puede desbloquearse mediante el software adecuado.</p>
+                        <p>No somos solo proveedores; somos tus **socios tecnológicos**. Nos integramos en tus procesos para entender tu negocio desde dentro.</p>
+                        
+                        <h3 class="mt-2">Nuestros Valores</h3>
+                        <ul class="custom-list">
+                            <li><strong>Transparencia:</strong> Comunicación clara en cada fase del proyecto.</li>
+                            <li><strong>Excelencia:</strong> Código limpio, escalable y seguro.</li>
+                            <li><strong>Innovación:</strong> Uso de frameworks de última generación.</li>
+                        </ul>
+                    </div>
+                    <div class="about-image">
+                        <!-- Placeholder visual para imagen de oficina -->
+                        <div class="image-placeholder">
+                            <p>🏢 Equipo LuminaTech</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================== PRODUCTOS =================== -->
+        <section id="productos" class="view">
+            <div class="container page-padding">
+                <h2 class="section-title">Productos Destacados</h2>
+                <p class="section-subtitle">Soluciones "Plug & Play" listas para implementar en tu empresa.</p>
+                
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">☁️</div>
+                        <h3>Lumina CRM</h3>
+                        <p>Gestiona tus clientes, automatiza correos y analiza tus ventas desde un único panel en la nube.</p>
+                        <div class="product-bottom"><strong>29,00 € <small>/ mes</small></strong><button class="btn-primary" onclick="addToCart('crm')">Añadir al carrito</button></div>
+                        <button class="btn-text" onclick="openModal('productos', 'crm')">Ver características ➔</button>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🛡️</div>
+                        <h3>DataShield Pro</h3>
+                        <p>Sistema de copias de seguridad automatizadas y encriptadas para proteger la información de tu empresa.</p>
+                        <div class="product-bottom"><strong>49,00 € <small>/ mes</small></strong><button class="btn-primary" onclick="addToCart('shield')">Añadir al carrito</button></div>
+                        <button class="btn-text" onclick="openModal('productos', 'shield')">Ver características ➔</button>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📈</div>
+                        <h3>Analytics Hub</h3>
+                        <p>Dashboard centralizado que conecta tus cuentas de Google, Meta y ERP para reportes en tiempo real.</p>
+                        <div class="product-bottom"><strong>39,00 € <small>/ mes</small></strong><button class="btn-primary" onclick="addToCart('analytics')">Añadir al carrito</button></div>
+                        <button class="btn-text" onclick="openModal('productos', 'analytics')">Ver características ➔</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =================== VENTANA MODAL (Dinámica) =================== -->
+    <div id="dynamicModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modal-body">
+                <!-- Aquí se inyecta el contenido con JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <h4>LuminaTech</h4>
+                <p>Innovando hoy el mañana.</p>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <p><a href="#">Aviso Legal</a> | <a href="#">Privacidad</a> | <a href="/admin.html">Base de datos</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

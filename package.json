@@ -1,0 +1,17 @@
+{
+  "name": "luminatech",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio LuminaTech con persistencia de contactos y pedidos",
+  "main": "server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js --open",
+    "start:server": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.4.1"
+  }
+}
